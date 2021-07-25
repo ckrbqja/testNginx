@@ -1,0 +1,11 @@
+service:
+  type: NodePort
+  nodePort: 31234
+
+resources:
+  limits:
+    cpu: 0.1
+    memory: 128Mi
+  requests:
+    cpu: 0.1
+    memory: 128Mi
