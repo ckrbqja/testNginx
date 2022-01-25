@@ -5,7 +5,7 @@ image:
   repository: test-image
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "80"
+  tag: "81"
 resources:
   limits:
     cpu: 0.1
@@ -13,4 +13,4 @@ resources:
   requests:
     cpu: 0.1
     memory: 128Mi
-replicaCount: 2    
+replicaCount: 2
