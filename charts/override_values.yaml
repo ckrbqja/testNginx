@@ -6,7 +6,8 @@ image:
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "86"
-imagePullSecrets: ap-northeast-2-ecr-registry
+imagePullSecrets: 
+  - name : ap-northeast-2-ecr-registry
 resources:
   limits:
     cpu: 0.1
