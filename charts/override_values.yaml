@@ -5,7 +5,7 @@ image:
   repository: 559916946718.dkr.ecr.ap-northeast-2.amazonaws.com/test-image
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "26"
+  tag: "24"
 imagePullSecrets:
   - name: ap-northeast-2-ecr-registry
 resources:
