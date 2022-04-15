@@ -1,6 +1,7 @@
 service:
   type: NodePort
-  nodePort: 43212
+  nodePort: 80
+  
 image:
   repository: 559916946718.dkr.ecr.ap-northeast-2.amazonaws.com/test-image
   pullPolicy: IfNotPresent
