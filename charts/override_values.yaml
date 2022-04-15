@@ -1,7 +1,4 @@
-service:
-  type: NodePort
-  nodePort: 80
-  
+ 
 image:
   repository: 559916946718.dkr.ecr.ap-northeast-2.amazonaws.com/test-image
   pullPolicy: IfNotPresent
@@ -9,6 +6,11 @@ image:
   tag: "25"
 imagePullSecrets:
   - name: ap-northeast-2-ecr-registry
+  
+service:
+  type: NodePort
+  nodePort: 34234
+  
 resources:
   limits:
     cpu: 0.1
