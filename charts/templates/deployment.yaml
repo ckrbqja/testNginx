@@ -30,8 +30,9 @@ spec:
       containers:
         - name: {{ .Chart.Name }}
           volumeMounts:
-          - name: file-volume
-            mountPath: /mount
+          - name: {{ .Values.volumeMounts.name }}
+            mountPath: {{ .Values.volumeMounts.mountPath }}
+#  환경변수
 #           envFrom:
 #           - configMapRef:
 #               name: cm-dev
@@ -54,9 +55,9 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
-      - name: file-volume
+      - name: {{ .Values.volumeMounts.name }}
         configMap:
-          name: cm-file
+          name: {{ .Values.volumeMounts.configMap.name }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
