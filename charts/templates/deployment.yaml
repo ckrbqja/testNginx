@@ -29,9 +29,19 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}
+###############
+          volumeMounts:
+          - name: file-volume
+            mountPath: /mount
+
+          volumes:
+          - name: file-volume
+            configMap:
+              name: cm-file
           envFrom:
           - configMapRef:
               name: cm-dev
+###############
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
