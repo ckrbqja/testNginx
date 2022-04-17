@@ -32,10 +32,6 @@ spec:
           volumeMounts:
           - name: file-volume
             mountPath: /mount
-      volumes:
-      - name: file-volume
-        configMap:
-        name: cm-file
 #           envFrom:
 #           - configMapRef:
 #               name: cm-dev
@@ -57,6 +53,10 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+      - name: file-volume
+        configMap:
+        name: cm-file
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
