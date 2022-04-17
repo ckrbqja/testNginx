@@ -32,10 +32,10 @@ spec:
           volumeMounts:
           - name: file-volume
             mountPath: /mount
-           volumes:
-           - name: file-volume
-             configMap:
-               name: cm-file
+      volumes:
+        - name: file-volume
+          configMap:
+          name: cm-file
 #           envFrom:
 #           - configMapRef:
 #               name: cm-dev
